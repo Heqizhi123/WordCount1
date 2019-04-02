@@ -16,35 +16,35 @@ public class Count extends JFrame
 	public Count()
 	{
 		JFrame f2=new JFrame();
-		f2.setTitle("Ó¢ÎÄÎÄ±¾Í³¼Æ·ÖÎö-¸ßÆµ´ÊÍ³¼Æ");
+		f2.setTitle("è‹±æ–‡æ–‡æœ¬ç»Ÿè®¡åˆ†æ-é«˜é¢‘è¯ç»Ÿè®¡");
 		f2.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		f2.setExtendedState(JFrame.MAXIMIZED_BOTH);
 		f2.setVisible(true);
 		
-		//ÉèÖÃ´°¿ÚµÄ´óĞ¡ºÍÎ»ÖÃ
+		//è®¾ç½®çª—å£çš„å¤§å°å’Œä½ç½®
 		f2.setSize(500,500);
 		f2.setLocation(200,200);
-		Container con2=f2.getContentPane();//Éú³ÉÒ»¸öÈİÆ÷	
+		Container con2=f2.getContentPane();//ç”Ÿæˆä¸€ä¸ªå®¹å™¨	
 		con2.setLayout(new GridLayout(4,1));
 		JTextField file = new JTextField(20);
 		JTextField num = new JTextField(20);
 		JPanel panel = new JPanel();
 		panel.setLayout(new GridLayout(2,2));
-		panel.add(new JLabel("ÊäÈëÎÄ¼şÃû"));
+		panel.add(new JLabel("è¾“å…¥æ–‡ä»¶å"));
 		panel.add(file);
 		JPanel panel1 = new JPanel();
-		panel.add(new JLabel("¸ßÆµ´Ê¸öÊı"));
+		panel.add(new JLabel("é«˜é¢‘è¯ä¸ªæ•°"));
 		panel.add(num);
 		con2.add(panel);
 		text = new JTextArea(80,40);
 		//text.setBackground(Color.blue);
 		con2.add(text);
-		JButton print=new JButton("Êä³ö"); 
+		JButton print=new JButton("è¾“å‡º"); 
 		panel1.add(print);
 		//String na = file.getText();
 	//	int number = Integer.parseInt(num.getText());
 		//JPanel panel2 = new JPanel();
-		JButton retur=new JButton("·µ»Ø"); 
+		JButton retur=new JButton("è¿”å›"); 
 		panel1.add(retur);
 		con2.add(panel1);
 		
@@ -62,7 +62,7 @@ public class Count extends JFrame
 		    public void actionPerformed(ActionEvent arg0) 
 		    {  
 		    	//text.append(file.getText());
-		    	String str=null;//¶¨ÒåÒ»¸ö×Ö·û´®ÀàĞÍ±äÁ¿str
+		    	String str=null;//å®šä¹‰ä¸€ä¸ªå­—ç¬¦ä¸²ç±»å‹å˜é‡str
 				StringBuffer sb1=  new  StringBuffer();
 				try {
 					String file1 =file.getText();
@@ -74,10 +74,10 @@ public class Count extends JFrame
 			        }
 		            in.close();
 				} catch (IOException e1) 
-				{//µ±try´úÂë¿éÓĞÒì³£Ê±×ªµ½catch´úÂë¿é
-			       	text.append("¶ÁÈ¡ÓĞÎó");
+				{//å½“tryä»£ç å—æœ‰å¼‚å¸¸æ—¶è½¬åˆ°catchä»£ç å—
+			       	text.append("è¯»å–æœ‰è¯¯");
 			       	System.out.printf("error!");
-			       	e1.printStackTrace();//printStackTrace()·½·¨ÊÇ´òÓ¡Òì³£ĞÅÏ¢ÔÚ³ÌĞòÖĞ³ö´íµÄÎ»ÖÃ¼°Ô­Òò
+			       	e1.printStackTrace();//printStackTrace()æ–¹æ³•æ˜¯æ‰“å°å¼‚å¸¸ä¿¡æ¯åœ¨ç¨‹åºä¸­å‡ºé”™çš„ä½ç½®åŠåŸå› 
 				}
 				TreeMap<StringBuffer,String > ts = new TreeMap<StringBuffer,String>
 				(new Comparator<StringBuffer>(){
@@ -101,11 +101,11 @@ public class Count extends JFrame
 						}
 					}
 				});
-				List<String> lists = new ArrayList<String>();  //´æ´¢¹ıÂËºóµ¥´ÊµÄÁĞ±í  
+				List<String> lists = new ArrayList<String>();  //å­˜å‚¨è¿‡æ»¤åå•è¯çš„åˆ—è¡¨  
 				String str2 = sb1.toString();
-				String[] wordsArr1 = str2.split("[^a-zA-Z]");  //¹ıÂË³öÖ»º¬ÓĞ×ÖÄ¸µÄ  
+				String[] wordsArr1 = str2.split("[^a-zA-Z]");  //è¿‡æ»¤å‡ºåªå«æœ‰å­—æ¯çš„  
 				for (String word : wordsArr1) {  
-					if(word.length() != 0){  //È¥³ı³¤¶ÈÎª0µÄĞĞ 
+					if(word.length() != 0){  //å»é™¤é•¿åº¦ä¸º0çš„è¡Œ 
 						lists.add(word);  
 					} 
 				}  
@@ -147,8 +147,10 @@ public class Count extends JFrame
 			
 				
 		    	for(Entry<String,Integer> entry : aMap2.entrySet()) 
-				 { 		 
-		    		text.append("µ¥´Ê£º " +entry.getKey() + "      ´ÎÊı   £º" + entry.getValue()+"\r\n"); 
+				 { 
+		    		 
+		    				 
+		    		text.append("å•è¯ï¼š " +entry.getKey() + "      æ¬¡æ•°   ï¼š" + entry.getValue()+"\r\n"); 
 					count=count+1;
 					if(count==Integer.parseInt(num.getText()))
 						break;
