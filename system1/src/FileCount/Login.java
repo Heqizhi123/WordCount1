@@ -20,24 +20,24 @@ public class Login {
 	public Login() 
 	{
 		JFrame f=new JFrame();
-		f.setTitle("Ó¢ÎÄÎÄ±¾Í³¼Æ·ÖÎö-µÇÂ¼");
+		f.setTitle("è‹±æ–‡æ–‡æœ¬ç»Ÿè®¡åˆ†æ-ç™»å½•");
 		f.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		f.setExtendedState(JFrame.MAXIMIZED_BOTH);
 		f.setVisible(true);
 		
-		//ÉèÖÃ´°¿ÚµÄ´óĞ¡ºÍÎ»ÖÃ
+		//è®¾ç½®çª—å£çš„å¤§å°å’Œä½ç½®
 		f.setSize(500,500);
 		f.setLocation(200,200);
 		
-		Container con=f.getContentPane();//Éú³ÉÒ»¸öÈİÆ÷	
+		Container con=f.getContentPane();//ç”Ÿæˆä¸€ä¸ªå®¹å™¨	
 		con.setLayout(new GridLayout(7,1));
 		
 		JPanel pan1 =new JPanel();
-		JLabel title=new JLabel("Ó¢ÎÄÎÄ±¾Í³¼Æ·ÖÎö");
-		title.setFont(new Font("ËÎÌå",Font.BOLD, 20));
+		JLabel title=new JLabel("è‹±æ–‡æ–‡æœ¬ç»Ÿè®¡åˆ†æ");
+		title.setFont(new Font("å®‹ä½“",Font.BOLD, 20));
 		pan1.add(title);
 		con.add(pan1);
-		//Éú³ÉÒ»¸öĞÂµÄ°æ	  
+		//ç”Ÿæˆä¸€ä¸ªæ–°çš„ç‰ˆ	  
 		JPanel pan2 = new JPanel();
 		JPanel pan3 = new JPanel();
 		JPanel pan4 = new JPanel();
@@ -48,51 +48,52 @@ public class Login {
 		con.add(pan4);
 		con.add(pan5);
 		
-		JLabel name=new JLabel("ÓÃ»§Ãû");
+		JLabel name=new JLabel("ç”¨æˆ·å");
 		pan2.add(name);
 		TextField tf_name=new TextField(20);
 		pan2.add(tf_name);
 		
-		JLabel pass = new JLabel("ÃÜÂë");
+		JLabel pass = new JLabel("å¯†ç ");
 		pan3.add(pass);
 		TextField password=new TextField(20);
 		password.setEchoChar('*');
 		pan3.add(password);
 		
-		JButton b_log=new JButton("µÇÂ½");  
+		JButton b_log=new JButton("ç™»é™†");  
 		b_log.addActionListener(new ActionListener() {  
 		    public void actionPerformed(ActionEvent e) {  
 		        // TODO Auto-generated method stub  
-		        //»ñÈ¡ÓÃ»§ÃûºÍÃÜÂë£¬½øĞĞĞ£Ñé  
+		        //è·å–ç”¨æˆ·åå’Œå¯†ç ï¼Œè¿›è¡Œæ ¡éªŒ  
 		        String myUsername=tf_name.getText(); 
 				String myPassword=password.getText();  
 		        if(myUsername.equals("user")&& myPassword.equals("123"))
 		       {  
-		            //JOptionPane.showMessageDialog(null, "µÇÂ½³É¹¦!");  
+		            JOptionPane.showMessageDialog(null, "ç™»é™†æˆåŠŸ!");  
 		            f.dispose();
 		            new MyExGUI();
 		            
-		        }
+		       }
 		        else{  
-		            JOptionPane.showMessageDialog(null, "ÕËºÅ»òÃÜÂë´íÎó!");  
+		            JOptionPane.showMessageDialog(null, "è´¦å·æˆ–å¯†ç é”™è¯¯!");  
 		            name.setText( "");  
 		            password.setText( "");  	
 		        }  
+		          
 		    }  
 		});  
 		pan4.add(b_log); 
 		
-		JButton b_exit=new JButton("ÍË³ö");  	 
+		JButton b_exit=new JButton("é€€å‡º");  	 
 		b_exit.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				// TODO Auto-generated method stub
-				 JOptionPane.showMessageDialog(null, "Ğ»Ğ»Ê¹ÓÃ£¡");
-				 f.setVisible(false);//Òş²Ø´°Ìå
-				 System.exit(0);//ÍË³ö³ÌĞò
+				 JOptionPane.showMessageDialog(null, "è°¢è°¢ä½¿ç”¨ï¼");
+				 f.setVisible(false);//éšè—çª—ä½“
+				 System.exit(0);//é€€å‡ºç¨‹åº
 			}		
 		});
 		pan5.add(b_exit);  
-		//µÇÂ½ºÍÍË³öÕâÁ½¸ö°´Å¥·ÅÔÚµÚËÄ¸ö°æÃæÉÏ
+		//ç™»é™†å’Œé€€å‡ºè¿™ä¸¤ä¸ªæŒ‰é’®æ”¾åœ¨ç¬¬å››ä¸ªç‰ˆé¢ä¸Š
 		
 
 	}
