@@ -12,24 +12,24 @@ public class MyExGUI {
     public MyExGUI()
     {  
     	JFrame f=new JFrame();
-		f.setTitle("Ó¢ÎÄÎÄ±¾Í³¼Æ·ÖÎö-²Ëµ¥");
+		f.setTitle("è‹±æ–‡æ–‡æœ¬ç»Ÿè®¡åˆ†æ-èœå•");
 		f.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		f.setExtendedState(JFrame.MAXIMIZED_BOTH);
 		f.setVisible(true);
 		
-		//ÉèÖÃ´°¿ÚµÄ´óĞ¡ºÍÎ»ÖÃ
+		//è®¾ç½®çª—å£çš„å¤§å°å’Œä½ç½®
 		f.setSize(500,500);
 		f.setLocation(200,200);
 		
-		Container con=f.getContentPane();//Éú³ÉÒ»¸öÈİÆ÷	
+		Container con=f.getContentPane();//ç”Ÿæˆä¸€ä¸ªå®¹å™¨	
 		con.setLayout(new GridLayout(7,1));
 		JPanel jp1 =new JPanel();
-		JLabel title=new JLabel("Ó¢ÎÄÎÄ±¾Í³¼Æ");
-		title.setFont(new Font("ËÎÌå",Font.BOLD, 20));
+		JLabel title=new JLabel("è‹±æ–‡æ–‡æœ¬ç»Ÿè®¡");
+		title.setFont(new Font("å®‹ä½“",Font.BOLD, 20));
 		jp1.add(title);
 		con.add(jp1);
 		JPanel jp3 =new JPanel();
-		JButton coun=new JButton("¸ßÆµ´Ê¼ÆÊı");
+		JButton coun=new JButton("é«˜é¢‘è¯è®¡æ•°");
 		coun.addActionListener(new ActionListener()
 		{  
 		    public void actionPerformed(ActionEvent e) 
@@ -41,24 +41,41 @@ public class MyExGUI {
 		jp3.add(coun);
 		con.add(jp3);
 		JPanel jp4 =new JPanel();
-		JButton print=new JButton("½á¹ûÊä³öµ½ÎÄ¼ş");
+		JButton print=new JButton("ç»“æœè¾“å‡ºåˆ°æ–‡ä»¶");
 		print.addActionListener(new ActionListener()
 		{  
 		    public void actionPerformed(ActionEvent e) 
 		    {  
 		    	f.dispose();
+		    	//JOptionPane.showMessageDialog(null, "è¾“å‡ºæ–‡ä»¶æˆåŠŸï¼");
 		    	new Print();   
 		    }  
 		});  
 		jp4.add(print);
 		con.add(jp4);
 		JPanel jp5 =new JPanel();
-		JButton sta=new JButton("Í³¼ÆĞĞÊıÓë×Ö·ûÊı");
+		JButton sta=new JButton("ç»Ÿè®¡è¡Œæ•°ä¸å­—ç¬¦æ•°");
 		jp5.add(sta);
+		sta.addActionListener(new ActionListener()
+		{  
+		    public void actionPerformed(ActionEvent e) 
+		    {  
+		    	f.dispose();
+		    	new Statis();   
+		    }  
+		});  
 		con.add(jp5);
 		JPanel jp6 =new JPanel();
-		JButton look=new JButton("²éÕÒÖ¸¶¨´ÊµÄ´ÊÆµ");
+		JButton look=new JButton("æŸ¥æ‰¾æŒ‡å®šè¯çš„è¯é¢‘");
 		jp6.add(look);
+		look.addActionListener(new ActionListener()
+		{  
+		    public void actionPerformed(ActionEvent e) 
+		    {  
+		    	f.dispose();
+		    	new Look();   
+		    }  
+		});  
 		con.add(jp6);
     }
  
