@@ -13,6 +13,14 @@ public class Count extends JFrame
 {
 	JTextArea text = new JTextArea();
 	
+	String Article[] = {"a","an","the"};
+	String Pronoun[]= {"you","i","he","she","they","we","me","him","her","them","us",
+			"my","his","your","their","this","that","these","those","myself","himself"
+			,"themdelves","yourself","herself","who","what","some","many","both","any"
+			,"which","whom","thought","which","whatever","whichever","whoever","whomever","one","ones"};
+	String Preposition[]= {"in","on","with","by","for","at","about","under","of","into",
+			"within","throughout","inside","outside","without","considering","regarding","respecting","including"};
+	
 	public Count()
 	{
 		JFrame f2=new JFrame();
@@ -25,7 +33,7 @@ public class Count extends JFrame
 		f2.setSize(500,500);
 		f2.setLocation(200,200);
 		Container con2=f2.getContentPane();//生成一个容器	
-		con2.setLayout(new GridLayout(4,1));
+		con2.setLayout(new GridLayout(3,1));
 		JTextField file = new JTextField(20);
 		JTextField num = new JTextField(20);
 		JPanel panel = new JPanel();
@@ -36,9 +44,11 @@ public class Count extends JFrame
 		panel.add(new JLabel("高频词个数"));
 		panel.add(num);
 		con2.add(panel);
-		text = new JTextArea(80,40);
+		text = new JTextArea(160,80);
+		JScrollPane jp=new JScrollPane(text);
+
 		//text.setBackground(Color.blue);
-		con2.add(text);
+		con2.add(jp);
 		JButton print=new JButton("输出"); 
 		panel1.add(print);
 		//String na = file.getText();
@@ -144,21 +154,71 @@ public class Count extends JFrame
 				 aMap2.put(entry.getKey(), entry.getValue()); 
 				 } 
 				 count = 0;
-			
-				
+				 int F=0;
+				 text.append("除去冠词的高频词： \n");
+		    	 for(Entry<String,Integer> entry : aMap2.entrySet()) 
+				 { 
+		    		 F=0;
+		    		 for(int i=0;i<Article.length;i++)
+					 {
+		    			 if(Article[i].equals(entry.getKey()))
+		    			 {
+		    				 F=1;
+		    			 }
+					 }
+		    		 if(F==0)
+		    		 {
+		    			 text.append("单词： " +entry.getKey() + "      次数   ：" + entry.getValue()+"\r\n"); 
+						 count=count+1; 
+		    		 }
+		    		 if(count==Integer.parseInt(num.getText()))
+						 break;
+				 }
+		    	count=0;
+		    	
+		    	text.append("除去代词的高频词： \n");
 		    	for(Entry<String,Integer> entry : aMap2.entrySet()) 
 				 { 
-		    		 
-		    				 
-		    		text.append("单词： " +entry.getKey() + "      次数   ：" + entry.getValue()+"\r\n"); 
-					count=count+1;
-					if(count==Integer.parseInt(num.getText()))
-						break;
-				}
-			 }
-		    
+		    		F=0;
+		    		 for(int j=0;j<Pronoun.length;j++)
+					 {
+		    			 if(Pronoun[j].equals(entry.getKey()))
+		    			 {
+		    				 F=1;
+		    			 }
+					 }
+		    		 if(F==0)
+		    		 {
+		    			 text.append("单词： " +entry.getKey() + "      次数   ：" + entry.getValue()+"\r\n"); 
+						 count=count+1; 
+		    		 }
+		    		 if(count==Integer.parseInt(num.getText()))
+						 break;
+				 }
+		    	
+		    	count=0;
+		    	
+		    	text.append("除去介词的高频词： \n");
+		    	for(Entry<String,Integer> entry : aMap2.entrySet()) 
+				 { 
+		    		F=0;
+		    		 for(int s=0;s<Preposition.length;s++)
+					 {
+		    			 if(Preposition[s].equals(entry.getKey()))
+		    			 { 
+		    				 F=1;
+		    			 } 
+					 }
+		    		 if(F==0)
+		    		 {
+		    			 text.append("单词： " +entry.getKey() + "      次数   ：" + entry.getValue()+"\r\n"); 
+						 count=count+1; 
+		    		 }
+		    		 if(count==Integer.parseInt(num.getText()))
+						 break;
+				 }
+		    }
 		}); 
 			
 	}
 }
-
